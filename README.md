@@ -1,2 +1,1 @@
-# eShop
-The eShop code for SNext
+open [this link](https://cube-enix.github.io/SN-Edit/editor.html?fps=60&hqpen&extension=https%3A%2F%2Fcube-enix.github.io%2FVarious%2520File%2520Hosting%2FSNConnect%2FnewIndex.js) to be able to load the project correctly. Check the "Builds" folder for the latest .sb3.

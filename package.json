@@ -1,28 +1,26 @@
 {
+  "name": "SNext-eShop",
+  "version": "2.0.0",
+  "description": "The eShop for SNext",
+  "main": "./main.js",
+  "scripts": {
+    "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"Build for $(git log --pretty=format:%H -n1) [skip ci]\"",
+    "build": "node main.js"
+  },
+  "author": "Cube Enix",
+  "license": "ISC",
+  "homepage": "https://github.com/Cube-Enix/eShop#readme",
+    "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Cube-Enix/eShop.git"
+  }, 
+  "bugs": {
+    "url": "https://github.com/Cube-Enix/eShop/issues"
+  },
   "dependencies": {
     "@sheeptester/htmlifier": "^1.0.3",
     "esm": "^3.2.25",
     "fetch-blob": "^3.2.0",
     "node-fetch": "^3.2.10"
   },
-  "type": "module",
-  "name": "snext-eshop",
-  "description": "The eShop code for SNext",
-  "version": "1.0.0",
-  "main": "main.js",
-  "devDependencies": {},
-  "scripts": {
-    "start": "node main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Cube-Enix/eShop.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Cube-Enix/eShop/issues"
-  },
-  "homepage": "https://github.com/Cube-Enix/eShop#readme"
 }

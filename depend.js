@@ -786,7 +786,7 @@ var xhttp
 
     open (args, utils) {
 	 // get data from args
-	 const data = JSON.stringify(args.data);
+	 const data = args.data;
 	 if (data) {
 	    xhttp = new XMLHttpRequest()
 	    try {

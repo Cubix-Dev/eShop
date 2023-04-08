@@ -1,1 +1,1 @@
-open [this link](https://cube-enix.github.io/SN-Edit/editor.html?fps=60&hqpen&extension=https%3A%2F%2Fcube-enix.github.io%2FVarious%2520File%2520Hosting%2FSNConnect%2FnewIndex.js) to be able to load the project correctly. Check the "Builds" folder for the latest .sb3.
+open [this link](https://cubix-firmware.github.io/SN-Edit/editor.html?fps=60&hqpen&extension=https%3A%2F%2Fcubix-firmware.github.io%2FVarious%2520File%2520Hosting%2FSNConnect%2FnewIndex.js) to be able to load the project correctly. Check the "Builds" folder for the latest .sb3.

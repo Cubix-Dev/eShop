@@ -728,6 +728,58 @@ var xhttp
                         }
                     }
                 },
+                {
+                	"opcode": 'makeJSON',
+                    "blockType": "reporter",
+                    "text": 'Convert [toBeJSONified] to JSON',
+					"arguments": {
+						"toBeJSONified": {
+							"type": "string",
+							"defaultValue": '{"test": true}',
+						},
+					}
+                },
+				{
+					"opcode": 'parseJSON',
+					"blockType": "reporter",
+					"text": '[PATH] of [JSON_STRING]',
+					"arguments": {
+						"PATH": {
+							"type": "string",
+							"defaultValue": 'fruit/apples',
+						},
+						"JSON_STRING": {
+							"type": "string",
+							"defaultValue": '{"fruit": {"apples": 2, "bananas": 3}, "total_fruit": 5}',
+						},
+					},
+				},
+				{
+                	"opcode": 'isValidJSON',
+                    "blockType": "Boolean",
+                    "text": 'Is [JSON_STRING] actual JSON?',
+					"arguments": {
+						"JSON_STRING": {
+							"type": "string",
+							"defaultValue": '{"fruit": {"apples": 2, "bananas": 3}, "total_fruit": 5}',
+						},
+					},
+                },
+				{
+                	"opcode": 'checkJSONforValue',
+                    "blockType": "Boolean",
+					"text": 'Does JSON [JSON_STRING] contains [VALUE]?',
+					"arguments": {
+						"JSON_STRING": {
+							"type": "string",
+							"defaultValue": '{"foo": "bar"}',
+						},
+						"VALUE": {
+							"type": "string",
+							"defaultValue": 'bar',
+						},
+					},
+                },
             ]
         }
     }
@@ -740,13 +792,70 @@ var xhttp
 	    try {
 		console.log(data)
 	    	xhttp.open(args.method,args.url)
-		xhttp.send(data);
-		
+		 xhttp.send(data);
 	    } catch {
 		console.log("an error occured")
 	    }
 	 }
     }
+    checkJSONforValue({JSON_STRING, VALUE}) {
+		try {
+			return Object.values(JSON.parse(JSON_STRING)).includes(VALUE);
+		} catch(err) {
+			return false;
+		};
+	};
+	
+	isValidJSON({JSON_STRING}) {
+		try {
+			JSON.parse(JSON_STRING);
+			return true;
+		} catch(err) {
+			return false;
+		}
+	};
+	
+	makeJSON({
+		toBeJSONified
+	}) {
+		console.log(typeof(toBeJSONified));
+		if (typeof(toBeJSONified) == "string") {
+			try {
+				JSON.parse(toBeJSONified);
+				return String(toBeJSONified);
+			} catch(err) {
+				return "Not JSON!";
+			}
+		} else if (typeof(toBeJSONified) == "object") {
+			return JSON.stringify(toBeJSONified);
+		} else {
+			return "Not JSON!";
+		};
+	};
+	
+	parseJSON({
+		PATH,
+		JSON_STRING
+	}) {
+		try {
+			const path = PATH.toString().split('/').map(prop => decodeURIComponent(prop));
+			if (path[0] === '') path.splice(0, 1);
+			if (path[path.length - 1] === '') path.splice(-1, 1);
+			let json;
+			try {
+				json = JSON.parse(' ' + JSON_STRING);
+			} catch (e) {
+				return e.message;
+			};
+			path.forEach(prop => json = json[prop]);
+			if (json === null) return 'null';
+			else if (json === undefined) return '';
+			else if (typeof json === 'object') return JSON.stringify(json);
+			else return json.toString();
+		} catch (err) {
+			return '';
+		};
+	};
 }
 
 (function() {

@@ -654,7 +654,9 @@ var audio
         }
     }
     stopsound (args, utils) {
-        audio.pause()
+        if(audio !== undefined) {
+                audio.pause()
+            }
     }
     audioTime (args, utils) {
         return audio.currentTime

@@ -10,7 +10,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": false
-    },
+    }
   },
   "HardHatHarold": {
     "id": 2,
@@ -23,7 +23,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": false
-    },
+    }
   },
   "Kaplam": {
     "id": 3,
@@ -36,7 +36,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": false
-    },
+    }
   },
   "LGMArena": {
     "id": 4,
@@ -49,7 +49,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": true
-    },
+    }
   },
   "FORRWARD": {
     "id": 5,
@@ -62,7 +62,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": true
-    },
+    }
   },
   "Paco": {
     "id": 6,
@@ -75,7 +75,7 @@
       "Release": "1-4-23",
       "sPlusOnly": false,
       "onlineOnly": false
-    },
+    }
   },
   "ChirpyCol": {
     "id": 7,
@@ -88,6 +88,6 @@
       "Release": "1-4-24",
       "sPlusOnly": false,
       "onlineOnly": false
-    },
-  },
+    }
+  }
 }
